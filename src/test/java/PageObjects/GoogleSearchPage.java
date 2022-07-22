@@ -15,6 +15,9 @@ public class GoogleSearchPage {
     @FindBy(xpath = "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]")
     private WebElement searchButton;
 
+    @FindBy(xpath = "//*[@id=\"gb\"]/div/div[1]/div/div[1]/a")
+    private WebElement gmailButton;
+
     public GoogleSearchPage (WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -26,5 +29,9 @@ public class GoogleSearchPage {
 
     public void setRejectAllButton() {
         this.rejectAllButton.click();
+    }
+
+    public void clickOnGmailButton() {
+        this.gmailButton.click();
     }
 }
